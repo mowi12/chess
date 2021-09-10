@@ -1,3 +1,7 @@
 <p align="center">
-  # Chess
+  Chess
 </p>
+
+
+## About Chess
+Simple Gui and KI for Chess
