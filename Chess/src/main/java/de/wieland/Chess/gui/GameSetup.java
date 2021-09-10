@@ -1,4 +1,4 @@
-package de.wieland.Chess.gui.swing;
+package de.wieland.Chess.gui;
 
 import java.awt.Container;
 import java.awt.GridLayout;

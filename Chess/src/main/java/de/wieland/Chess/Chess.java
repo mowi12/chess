@@ -1,6 +1,6 @@
 package de.wieland.Chess;
 
-import de.wieland.Chess.gui.swing.Table;
+import de.wieland.Chess.gui.Table;
 
 public class Chess {
 	

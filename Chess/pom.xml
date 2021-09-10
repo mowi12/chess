@@ -15,8 +15,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.7</maven.compiler.source>
-		<maven.compiler.target>1.7</maven.compiler.target>
+		<maven.compiler.source>14</maven.compiler.source>
+		<maven.compiler.target>14</maven.compiler.target>
 		<junit.jupiter.version>5.0.1</junit.jupiter.version>
 		<junit.platform.version>1.0.1</junit.platform.version>
 	</properties>
@@ -87,29 +87,6 @@
 				<plugin>
 					<artifactId>maven-project-info-reports-plugin</artifactId>
 					<version>3.0.0</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-resources-plugin</artifactId>
-					<version>2.6</version>
-					<executions>
-						<execution>
-							<id>copy-resources</id>
-							<phase>validate</phase>
-							<goals>
-								<goal>copy-resources</goal>
-							</goals>
-							<configuration>
-								<outputDirectory>${basedir}/target/classes</outputDirectory>
-								<includeEmptyDirs>true</includeEmptyDirs>
-								<resources>
-									<resource>
-										<directory>${basedir}/src/resource</directory>
-										<filtering>false</filtering>
-									</resource>
-								</resources>
-							</configuration>
-						</execution>
-					</executions>
 				</plugin>
 				<plugin>
 					<groupId>org.openjfx</groupId>
