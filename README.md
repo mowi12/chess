@@ -1,1 +1,3 @@
-<p style="text-align: center;"># Chess</p>
+<p align="center">
+  # Chess
+</p>
