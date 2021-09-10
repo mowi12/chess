@@ -129,6 +129,7 @@ public class Table extends Observable {
 		setDefaultLookAndFeelDecorated(true);
 		gameFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		gameFrame.setSize(OUTER_FRAME_DIMENSION_X, OUTER_FRAME_DIMENSION_Y);
+		gameFrame.setResizable(false);
 		gameFrame.setVisible(true);
 	}
 	
