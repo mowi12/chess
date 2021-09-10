@@ -1,6 +1,6 @@
-<p align="center">
+<h1 align="center">
   Chess
-</p>
+</h1>
 
 
 ## About Chess
