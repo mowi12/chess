@@ -1,4 +1,4 @@
-package de.wieland.Chess.gui;
+package de.wieland.Chess.gui.swing;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;

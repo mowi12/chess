@@ -1,4 +1,4 @@
-package de.wieland.Chess.gui;
+package de.wieland.Chess.gui.swing;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 import de.wieland.Chess.engine.board.Board;
 import de.wieland.Chess.engine.board.Move;
-import de.wieland.Chess.gui.Table.MoveLog;
+import de.wieland.Chess.gui.swing.Table.MoveLog;
 
 /**
  * public class GameHistoryPanel

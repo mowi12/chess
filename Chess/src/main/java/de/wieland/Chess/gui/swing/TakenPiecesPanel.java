@@ -1,4 +1,4 @@
-package de.wieland.Chess.gui;
+package de.wieland.Chess.gui.swing;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -22,7 +22,7 @@ import com.google.common.primitives.Ints;
 
 import de.wieland.Chess.engine.board.Move;
 import de.wieland.Chess.engine.pieces.Piece;
-import de.wieland.Chess.gui.Table.MoveLog;
+import de.wieland.Chess.gui.swing.Table.MoveLog;
 
 /**
  * public class TakenPiecesPanel
