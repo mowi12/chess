@@ -9,7 +9,8 @@ import de.wieland.Chess.engine.player.WhitePlayer;
  * public enum Alliance
  * 
  * @author Moritz Wieland
- * @verion 1.0
+ * @version 1.0
+ * @date 10.09.2021
  */
 public enum Alliance {
 	WHITE {

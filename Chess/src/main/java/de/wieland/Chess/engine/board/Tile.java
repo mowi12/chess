@@ -12,6 +12,7 @@ import de.wieland.Chess.engine.pieces.Piece;
  * 
  * @author Moritz Wieland
  * @version 1.0
+ * @date 10.09.2021
  */
 public abstract class Tile {
 	protected final int tileCoordinate;

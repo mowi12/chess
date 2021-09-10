@@ -20,6 +20,7 @@ import de.wieland.Chess.gui.Table.MoveLog;
  * 
  * @author Moritz Wieland
  * @version 1.0
+ * @date 10.09.2021
  */
 @SuppressWarnings("serial")
 public class GameHistoryPanel extends JPanel {
@@ -87,7 +88,7 @@ public class GameHistoryPanel extends JPanel {
 		if(board.getCurrentPlayer().isInCheckMate()) {
 			return "#";
 		} else if(board.getCurrentPlayer().isInCheck()) {
-			return "+"; //TODO isInCheck has to be stored in Move also 
+			return "+"; //TODO isInCheck has to be stored in Move also
 		}
 		return "";
 	}

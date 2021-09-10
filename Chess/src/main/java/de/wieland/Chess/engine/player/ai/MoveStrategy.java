@@ -8,6 +8,7 @@ import de.wieland.Chess.engine.board.Move;
  * 
  * @author Moritz Wieland
  * @version 1.0
+ * @date 10.09.2021
  */
 public interface MoveStrategy {
 	Move execute(final Board board);

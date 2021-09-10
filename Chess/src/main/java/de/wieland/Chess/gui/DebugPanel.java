@@ -13,6 +13,7 @@ import javax.swing.JTextArea;
  * 
  * @author Moritz Wieland
  * @version 1.0
+ * @date 10.09.2021
  */
 @SuppressWarnings({ "serial", "deprecation" })
 public class DebugPanel extends JPanel implements Observer {

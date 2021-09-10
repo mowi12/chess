@@ -13,6 +13,7 @@ import de.wieland.Chess.engine.pieces.Piece;
  * 
  * @author Moritz Wieland
  * @version 1.0
+ * @date 10.09.2021
  */
 public class BoardUtils {
 	public static final boolean[] FIRST_COLUMN = initColumn(0);

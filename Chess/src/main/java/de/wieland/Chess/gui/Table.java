@@ -59,6 +59,14 @@ import de.wieland.Chess.pgn.FenUtilities;
 
 import static javax.swing.JFrame.setDefaultLookAndFeelDecorated;
 
+
+/**
+ * Public class Table.
+ * 
+ * @author Moritz Wieland
+ * @version 1.0
+ * @date 10.09.2021
+ */
 @SuppressWarnings("deprecation")
 public class Table extends Observable {
 	private static final Table SINGLETON = new Table();

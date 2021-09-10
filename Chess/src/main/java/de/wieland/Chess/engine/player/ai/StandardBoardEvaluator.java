@@ -12,6 +12,7 @@ import de.wieland.Chess.engine.player.Player;
  * 
  * @author Moritz Wieland
  * @version 1.0
+ * @date 10.09.2021
  */
 public final class StandardBoardEvaluator implements BoardEvaluator {
 	private static final int CHECKMATE_BONUS = 10000;

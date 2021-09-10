@@ -19,6 +19,7 @@ import de.wieland.Chess.engine.board.Move.MajorMove;
  * 
  * @author Moritz Wieland
  * @version 1.0
+ * @date 10.09.2021
  */
 public class Rook extends Piece {
 	private static final int[] CANDIDATE_MOVE_VECTOR_COORDINATES = {-8, -1, 1, 8};

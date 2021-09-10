@@ -4,6 +4,13 @@ import de.wieland.Chess.engine.board.Board;
 import de.wieland.Chess.engine.board.BoardUtils;
 import de.wieland.Chess.engine.pieces.Pawn;
 
+/**
+ * Public class FenUtilities.
+ * 
+ * @author Moritz Wieland
+ * @version 1.0
+ * @date 10.09.2021
+ */
 public class FenUtilities {
 	
 	private FenUtilities() {

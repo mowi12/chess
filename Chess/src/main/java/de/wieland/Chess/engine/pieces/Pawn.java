@@ -21,6 +21,7 @@ import de.wieland.Chess.engine.board.Move.PawnEnPassantAttackMove;
  * 
  * @author Moritz Wieland
  * @version 1.0
+ * @date 10.09.2021
  */
 public class Pawn extends Piece {
 	private static final int[] CANDIDATE_MOVE_COORDINATES = {7, 8, 9, 16};

@@ -29,6 +29,7 @@ import de.wieland.Chess.gui.Table.MoveLog;
  * 
  * @author Moritz Wieland
  * @version 1.0
+ * @date 10.09.2021
  */
 @SuppressWarnings("serial")
 public class TakenPiecesPanel extends JPanel {

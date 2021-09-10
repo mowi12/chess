@@ -13,6 +13,7 @@ import de.wieland.Chess.engine.board.MoveTransition;
  * 
  * @author Moritz Wieland
  * @version 1.0
+ * @date 10.09.2021
  */
 public class MiniMax implements MoveStrategy {
 	private final BoardEvaluator boardEvaluator;

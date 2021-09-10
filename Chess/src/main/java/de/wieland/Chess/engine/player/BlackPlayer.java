@@ -19,6 +19,7 @@ import de.wieland.Chess.engine.pieces.Rook;
  * 
  * @author Moritz Wieland
  * @version 1.0
+ * @date 10.09.2021
  */
 public class BlackPlayer extends Player {
 

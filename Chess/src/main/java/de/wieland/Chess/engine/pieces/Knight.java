@@ -19,6 +19,7 @@ import de.wieland.Chess.engine.board.Tile;
  * 
  * @author Moritz Wieland
  * @version 1.0
+ * @date 10.09.2021
  */
 public class Knight extends Piece {
 	private static final int[] CANDIDATE_MOVE_COORDINATES = {-17, -15, -10, -6, 6, 10, 15, 17};

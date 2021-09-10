@@ -26,6 +26,7 @@ import de.wieland.Chess.engine.player.WhitePlayer;
  * 
  * @author Moritz Wieland
  * @version 1.0
+ * @date 10.09.2021
  */
 public class Board {
 	private final List<Tile> gameBoard;
