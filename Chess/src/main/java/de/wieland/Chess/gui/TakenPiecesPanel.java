@@ -25,7 +25,7 @@ import de.wieland.Chess.engine.pieces.Piece;
 import de.wieland.Chess.gui.Table.MoveLog;
 
 /**
- * public class TakenPiecesPanel
+ * Public class TakenPiecesPanel.
  * 
  * @author Moritz Wieland
  * @version 1.0

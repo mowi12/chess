@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 /**
- * public class DebugPanel
+ * Public class DebugPanel.
  * 
  * @author Moritz Wieland
  * @version 1.0

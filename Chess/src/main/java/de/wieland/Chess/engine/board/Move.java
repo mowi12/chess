@@ -6,7 +6,7 @@ import de.wieland.Chess.engine.pieces.Piece;
 import de.wieland.Chess.engine.pieces.Rook;
 
 /**
- * public abstract class Move
+ * Public abstract class Move.
  * 
  * @author Moritz Wieland
  * @version 1.0
@@ -109,6 +109,9 @@ public abstract class Move {
 		return false;
 	}
 	
+	/**
+	 * Getter and Setter methods.
+	 */
 	public Board getBoard() { return board; }
 	public Piece getMovedPiece() { return movedPiece; }
 	public Piece getAttackedPiece() { return null; }
@@ -116,6 +119,13 @@ public abstract class Move {
 	public int getDestinationCoordinate() { return destinationCoordinate; }
 	
 	
+	/**
+	 * Public static final class MajorMove.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static final class MajorMove extends Move {
 
 		public MajorMove(final Board board,
@@ -137,6 +147,13 @@ public abstract class Move {
 	}
 	
 	
+	/**
+	 * Public static class AttackMove.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static class AttackMove extends Move {
 		private final Piece attackedPiece;
 		
@@ -176,6 +193,13 @@ public abstract class Move {
 	}
 	
 	
+	/**
+	 * Public static class MajorAttackMove.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static class MajorAttackMove extends AttackMove {
 
 		public MajorAttackMove(final Board board,
@@ -198,6 +222,13 @@ public abstract class Move {
 	}
 	
 	
+	/**
+	 * Public static final class PawnMove.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static final class PawnMove extends Move {
 
 		public PawnMove(final Board board,
@@ -218,6 +249,13 @@ public abstract class Move {
 	}
 	
 	
+	/**
+	 * Public static class PawnAttackMove.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static class PawnAttackMove extends AttackMove {
 
 		public PawnAttackMove(final Board board,
@@ -241,6 +279,13 @@ public abstract class Move {
 	}
 	
 	
+	/**
+	 * Public static final class PawnEnPassantAttackMove.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static final class PawnEnPassantAttackMove extends PawnAttackMove {
 
 		public PawnEnPassantAttackMove(final Board board,
@@ -294,6 +339,13 @@ public abstract class Move {
 	}
 	
 	
+	/**
+	 * Public static class PawnPromotion.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static class PawnPromotion extends Move {
 		final Move decoratedMove;
 		final Pawn promotedPawn;
@@ -359,6 +411,13 @@ public abstract class Move {
 	}
 	
 	
+	/**
+	 * Public static final class PawnJump.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static final class PawnJump extends Move {
 
 		public PawnJump(final Board board,
@@ -403,6 +462,13 @@ public abstract class Move {
 	}
 	
 	
+	/**
+	 * Static abstract class CastleMove.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	static abstract class CastleMove extends Move {
 		protected final Rook castleRook;
 		protected final int castleRookStart;
@@ -473,6 +539,13 @@ public abstract class Move {
 	}
 	
 	
+	/**
+	 * Public static final class KingSideCastleMove.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static final class KingSideCastleMove extends CastleMove {
 
 		public KingSideCastleMove(final Board board,
@@ -506,6 +579,13 @@ public abstract class Move {
 	}
 	
 	
+	/**
+	 * Public static final class QueenSideCastleMove.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static final class QueenSideCastleMove extends CastleMove {
 
 		public QueenSideCastleMove(final Board board,
@@ -539,6 +619,13 @@ public abstract class Move {
 	}
 	
 	
+	/**
+	 * Public static final class NullMove.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static final class NullMove extends Move {
 
 		public NullMove() {
@@ -567,6 +654,13 @@ public abstract class Move {
 	}
 	
 	
+	/**
+	 * Public static class MoveFactory.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static class MoveFactory {
 		private static final Move NULL_MOVE = new NullMove();
 		
@@ -587,6 +681,9 @@ public abstract class Move {
 			return NULL_MOVE;
 		}
 		
+		/**
+		 * Getter method.
+		 */
 		public static Move getNullMove() { return NULL_MOVE; }
 	}
 }

@@ -17,7 +17,7 @@ import de.wieland.Chess.engine.board.Move.PawnPromotion;
 import de.wieland.Chess.engine.board.Move.PawnEnPassantAttackMove;
 
 /**
- * public class Pawn
+ * Public class Pawn.
  * 
  * @author Moritz Wieland
  * @version 1.0

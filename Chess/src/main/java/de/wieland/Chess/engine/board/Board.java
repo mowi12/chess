@@ -22,7 +22,7 @@ import de.wieland.Chess.engine.player.Player;
 import de.wieland.Chess.engine.player.WhitePlayer;
 
 /**
- * public class Board
+ * Public class Board.
  * 
  * @author Moritz Wieland
  * @version 1.0
@@ -149,6 +149,9 @@ public class Board {
 		return builder.build();
 	}
 	
+	/**
+	 * Getter and Setter methods.
+	 */
 	public Piece getPiece(final int coordinate) { return gameBoard.get(coordinate).getPiece(); }
 	public Collection<Piece> getWhitePieces() { return this.whitePieces; }
 	public Collection<Piece> getBlackPieces() { return this.blackPieces; }
@@ -173,6 +176,13 @@ public class Board {
 	public Tile getTile(final int tileCoordinate) { return gameBoard.get(tileCoordinate); }
 	
 	
+	/**
+	 * Public static class Builder.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static class Builder {
 		Map<Integer, Piece> boardConfig;
 		Alliance nextMoveMaker;

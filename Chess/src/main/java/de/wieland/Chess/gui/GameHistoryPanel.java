@@ -16,7 +16,7 @@ import de.wieland.Chess.engine.board.Move;
 import de.wieland.Chess.gui.Table.MoveLog;
 
 /**
- * public class GameHistoryPanel
+ * Public class GameHistoryPanel.
  * 
  * @author Moritz Wieland
  * @version 1.0
@@ -94,12 +94,22 @@ public class GameHistoryPanel extends JPanel {
 	}
 	
 	
+	/**
+	 * Private static class Row.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	private static class Row {
 		private String whiteMove;
 		private String blackMove;
 		
 		Row() {}
 		
+		/**
+		 * Getter and Setter methods.
+		 */
 		public void setWhiteMove(final String move) { whiteMove = move; }
 		public String getWhiteMove() { return whiteMove; }
 		public void setBlackMove(final String move) { blackMove = move; }
@@ -107,6 +117,13 @@ public class GameHistoryPanel extends JPanel {
 	}
 
 
+	/**
+	 * Private static class DataModel.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	private static class DataModel extends DefaultTableModel {
 		private final List<Row> values;
 		private static final String[] NAMES = {"White", "Black"};

@@ -15,7 +15,7 @@ import de.wieland.Chess.engine.pieces.Piece;
 import de.wieland.Chess.engine.pieces.Rook;
 
 /**
- * public class BlackPlayer
+ * Public class BlackPlayer.
  * 
  * @author Moritz Wieland
  * @version 1.0
@@ -66,6 +66,9 @@ public class BlackPlayer extends Player {
 		return Alliance.BLACK.toString();
 	}
 
+	/**
+	 * Getter and Setter methods.
+	 */
 	@Override
 	public Collection<Piece> getActivePieces() { return board.getBlackPieces(); }
 	@Override

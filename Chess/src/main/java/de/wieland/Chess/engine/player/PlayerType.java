@@ -1,7 +1,7 @@
 package de.wieland.Chess.engine.player;
 
 /**
- * public enum PlayerType
+ * Public enum PlayerType.
  * 
  * @author Moritz Wieland
  * @version 1.0

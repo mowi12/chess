@@ -17,6 +17,13 @@ import de.wieland.Chess.engine.pieces.Pawn;
 import de.wieland.Chess.engine.pieces.Queen;
 import de.wieland.Chess.engine.pieces.Rook;
 
+/**
+ * Public class TestCheckmate - JUnit Test Case.
+ * 
+ * @author Moritz Wieland
+ * @version 1.0
+ * @date 10.09.2021
+ */
 public class TestCheckmate {
 
     @Test

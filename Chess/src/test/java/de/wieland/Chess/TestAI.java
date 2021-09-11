@@ -11,6 +11,13 @@ import de.wieland.Chess.engine.board.MoveTransition;
 import de.wieland.Chess.engine.player.ai.MiniMax;
 import de.wieland.Chess.engine.player.ai.MoveStrategy;
 
+/**
+ * Public class TestAI - JUnit Test Case.
+ * 
+ * @author Moritz Wieland
+ * @version 1.0
+ * @date 10.09.2021
+ */
 public class TestAI {
 	@Test
 	public void testFoolsMate() {

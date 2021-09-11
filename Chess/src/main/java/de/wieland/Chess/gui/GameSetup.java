@@ -21,7 +21,7 @@ import de.wieland.Chess.engine.player.Player;
 import de.wieland.Chess.engine.player.PlayerType;
 
 /**
- * public class GameSetup
+ * Public class GameSetup.
  * 
  * @author Moritz Wieland
  * @version 1.0
@@ -114,6 +114,9 @@ public class GameSetup extends JDialog {
         return spinner;
     }
 
+    /**
+     * Getter and Setter methods.
+     */
     int getSearchDepth() { return (Integer)this.searchDepthSpinner.getValue(); }
     PlayerType getWhitePlayerType() { return this.whitePlayerType; }
     PlayerType getBlackPlayerType() { return this.blackPlayerType; }

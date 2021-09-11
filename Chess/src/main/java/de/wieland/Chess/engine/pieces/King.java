@@ -15,7 +15,7 @@ import de.wieland.Chess.engine.board.Move.MajorAttackMove;
 import de.wieland.Chess.engine.board.Move.MajorMove;
 
 /**
- * public class King
+ * Public class King.
  * 
  * @author Moritz Wieland
  * @version 1.0
@@ -131,7 +131,7 @@ public class King extends Piece {
 	}
 	
 	/**
-	 * Getter methods
+	 * Getter and Setter methods.
 	 */
 	public boolean isCastled() { return isCastled; }
 	public boolean isKingSideCastleCapable() { return this.kingSideCastleCapable; }

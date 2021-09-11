@@ -25,7 +25,6 @@ import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JColorChooser;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -37,7 +36,6 @@ import javax.swing.JRadioButtonMenuItem;
 import javax.swing.SwingUtilities;
 import javax.swing.SwingWorker;
 import javax.swing.WindowConstants;
-import javax.swing.filechooser.FileFilter;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
@@ -54,7 +52,6 @@ import de.wieland.Chess.engine.player.PlayerType;
 import de.wieland.Chess.engine.player.ai.MiniMax;
 import de.wieland.Chess.engine.player.ai.MoveStrategy;
 import de.wieland.Chess.engine.player.ai.StandardBoardEvaluator;
-import de.wieland.Chess.pgn.FenUtilities;
 
 import static javax.swing.JFrame.setDefaultLookAndFeelDecorated;
 
@@ -154,56 +151,12 @@ public class Table extends Observable {
 	private JMenu createFileMenu() {
 		final JMenu fileMenu = new JMenu("File");
 		
-		final JMenuItem openPGN = new JMenuItem("Load PGN File");
-		openPGN.addActionListener(e -> {
-			JFileChooser fileChooser = new JFileChooser();
-			int option = fileChooser.showOpenDialog(Table.get().getGameFrame());
-			if(option == JFileChooser.APPROVE_OPTION) {
-				loadPGNFile(fileChooser.getSelectedFile());
-			}
-		});
-		
-		final JMenuItem openFEN = new JMenuItem("Load FEN File");
-		openFEN.addActionListener(e -> {
-			String fenString = JOptionPane.showInputDialog("Input FEN");
-			if(fenString != null) {
-				undoAllMoves();
-				chessBoard = FenUtilities.createGameFromFEN(fenString);
-				Table.get().getBoardPanel().drawBoard(chessBoard);
-			}
-		});
-		
-		final JMenuItem saveToPGN = new JMenuItem("Save Game");
-		saveToPGN.addActionListener(e -> {
-			final JFileChooser fileChooser = new JFileChooser();
-			fileChooser.setFileFilter(new FileFilter() {
-				@Override
-				public String getDescription() {
-					return ".pgn";
-				}
-				
-				@Override
-				public boolean accept(final File file) {
-					return file.isDirectory() || file.getName().toLowerCase().endsWith("pgn");
-				}
-			});
-			
-			final int option = fileChooser.showSaveDialog(Table.get().getGameFrame());
-			
-			if(option == JFileChooser.APPROVE_OPTION) {
-				savePGNFile(fileChooser.getSelectedFile());
-			}
-		});
-		
 		final JMenuItem exit = new JMenuItem("Exit");
 		exit.addActionListener(e -> {
 			Table.get().getGameFrame().dispose();
 			System.exit(0);
 		});
 		
-		fileMenu.add(openPGN);
-		fileMenu.add(openFEN);
-		fileMenu.add(saveToPGN);
 		fileMenu.add(exit);
 		
 		return fileMenu;
@@ -370,14 +323,6 @@ public class Table extends Observable {
         Table.get().getDebugPanel().redo();
     }
 	
-	private static void loadPGNFile(final File pgnFile) {
-//      persistPGNFile(pgnFile); TODO PGNUtilities
-    }
-
-    private static void savePGNFile(final File pgnFile) {
-//      writeGameToPGNFile(pgnFile, Table.get().getMoveLog()); TODO PGNUtilities
-    }
-	
 	private void moveMadeUpdate(final PlayerType playerType) {
 		setChanged();
         notifyObservers(playerType);
@@ -388,6 +333,10 @@ public class Table extends Observable {
 		notifyObservers(gameSetup);
 	}
 	
+	/**
+	 * Getter and Setter methods.
+	 * @return
+	 */
 	private JFrame getGameFrame() { return gameFrame; }
 	private Board getGameBoard() { return chessBoard; }
 	private GameHistoryPanel getGameHistoryPanel() { return gameHistoryPanel; }
@@ -398,6 +347,13 @@ public class Table extends Observable {
 	private GameSetup getGameSetup() { return gameSetup; }
 	
 	
+	/**
+	 * Private static class TableGameAIWatcher.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	private static class TableGameAIWatcher implements Observer {
 		@Override
 		public void update(final Observable o,
@@ -425,6 +381,13 @@ public class Table extends Observable {
 	}
 	
 	
+	/**
+	 * Private static class AIThinkTank.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	private static class AIThinkTank extends SwingWorker<Move, String> {
 		
 		private AIThinkTank() {}
@@ -459,35 +422,13 @@ public class Table extends Observable {
 	}
 	
 	
-	public enum BoardDirection {
-		NORMAL {
-			@Override
-			List<TilePanel> traverse(final List<TilePanel> boardTiles) {
-				return boardTiles;
-			}
-			
-			@Override
-			BoardDirection opposite() {
-				return FLIPPED;
-			}
-		},
-		FLIPPED {
-			@Override
-			List<TilePanel> traverse(final List<TilePanel> boardTiles) {
-				return Lists.reverse(boardTiles);
-			}
-			
-			@Override
-			BoardDirection opposite() {
-				return NORMAL;
-			}
-		};
-		
-		abstract List<TilePanel> traverse(final List<TilePanel> boardTiles);
-		abstract BoardDirection opposite();
-	}
-	
-	
+	/**
+	 * Private class BoardPanel.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	@SuppressWarnings("serial")
 	private class BoardPanel extends JPanel {
 		final List<TilePanel> boardTiles;
@@ -540,6 +481,13 @@ public class Table extends Observable {
 	}
 	
 	
+	/**
+	 * Public static class MoveLog.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static class MoveLog {
 		private final List<Move> moves;
 		
@@ -571,6 +519,13 @@ public class Table extends Observable {
 	}
 	
 	
+	/**
+	 * Private class TilePanel.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	@SuppressWarnings("serial")
 	private class TilePanel extends JPanel {
 		private final int tileId;
@@ -739,5 +694,41 @@ public class Table extends Observable {
 			
             return Collections.emptyList();
 		}
+	}
+	
+	
+	/**
+	 * Public enum BoardDirection.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
+	public enum BoardDirection {
+		NORMAL {
+			@Override
+			List<TilePanel> traverse(final List<TilePanel> boardTiles) {
+				return boardTiles;
+			}
+			
+			@Override
+			BoardDirection opposite() {
+				return FLIPPED;
+			}
+		},
+		FLIPPED {
+			@Override
+			List<TilePanel> traverse(final List<TilePanel> boardTiles) {
+				return Lists.reverse(boardTiles);
+			}
+			
+			@Override
+			BoardDirection opposite() {
+				return NORMAL;
+			}
+		};
+		
+		abstract List<TilePanel> traverse(final List<TilePanel> boardTiles);
+		abstract BoardDirection opposite();
 	}
 }

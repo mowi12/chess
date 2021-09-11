@@ -10,7 +10,7 @@ import de.wieland.Chess.engine.board.Move.MoveFactory;
 import de.wieland.Chess.engine.board.MoveTransition;
 
 /**
- * public class MiniMax
+ * Public class MiniMax.
  * 
  * @author Moritz Wieland
  * @version 1.0
@@ -187,6 +187,13 @@ public class MiniMax extends Observable implements MoveStrategy {
 	}
 	
 	
+	/**
+	 * Public static class FreqTableRow.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	private static class FreqTableRow {
 		private final Move move;
 		private final AtomicLong count;
@@ -196,13 +203,16 @@ public class MiniMax extends Observable implements MoveStrategy {
 			this.move = move;
 		}
 		
-		long getCount() { return count.get(); }
-		void increment() { count.incrementAndGet(); }
-		
 		@Override
 		public String toString() {
 			return BoardUtils.getPositionAtCoordinate(move.getCurrentCoordinate()) +
 				   BoardUtils.getPositionAtCoordinate(move.getDestinationCoordinate()) + " : "  + count;
 		}
+		
+		/**
+		 * Getter and Setter methods.
+		 */
+		long getCount() { return count.get(); }
+		void increment() { count.incrementAndGet(); }
 	}
 }

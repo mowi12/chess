@@ -15,7 +15,7 @@ import de.wieland.Chess.engine.pieces.Piece;
 import de.wieland.Chess.engine.pieces.Rook;
 
 /**
- * public class WhitePlayer
+ * Public class WhitePlayer.
  * 
  * @author Moritz Wieland
  * @version 1.0
@@ -68,6 +68,9 @@ public class WhitePlayer extends Player {
 		return Alliance.WHITE.toString();
 	}
 
+	/**
+	 * Getter and Setter methods.
+	 */
 	@Override
 	public Collection<Piece> getActivePieces() { return board.getWhitePieces(); }
 	@Override

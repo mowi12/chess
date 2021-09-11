@@ -10,6 +10,13 @@ import de.wieland.Chess.engine.board.BoardUtils;
 import de.wieland.Chess.engine.board.Move;
 import de.wieland.Chess.engine.board.MoveTransition;
 
+/**
+ * Public class TestCastling - JUnit Test Case.
+ * 
+ * @author Moritz Wieland
+ * @version 1.0
+ * @date 10.09.2021
+ */
 public class TestCastling {
 
     @Test

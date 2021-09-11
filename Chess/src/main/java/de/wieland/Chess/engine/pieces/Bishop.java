@@ -15,7 +15,7 @@ import de.wieland.Chess.engine.board.Move.MajorAttackMove;
 import de.wieland.Chess.engine.board.Move.MajorMove;
 
 /**
- * public class Bishop
+ * Public class Bishop.
  * 
  * @author Moritz Wieland
  * @version 1.0

@@ -1,7 +1,7 @@
 package de.wieland.Chess.engine.board;
 
 /**
- * public class MoveTransition
+ * Public class MoveTransition.
  * 
  * @author Moritz Wieland
  * @version 1.0
@@ -23,6 +23,9 @@ public class MoveTransition {
 		this.moveStatus = moveStatus;
 	}
 	
+	/**
+	 * Getter and Setter methods.
+	 */
 	public Board getFromBoard() { return fromBoard; }
 	public Board getToBoard() { return toBoard; }
 	public Move getTransitionMove() { return transitionMove; }

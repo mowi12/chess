@@ -23,6 +23,13 @@ import de.wieland.Chess.engine.pieces.Rook;
 import de.wieland.Chess.engine.player.ai.BoardEvaluator;
 import de.wieland.Chess.engine.player.ai.StandardBoardEvaluator;
 
+/**
+ * Public class TestBoard - JUnit Test Case.
+ * 
+ * @author Moritz Wieland
+ * @version 1.0
+ * @date 10.09.2021
+ */
 public class TestBoard {
 	@Test
     public void initialBoard() {

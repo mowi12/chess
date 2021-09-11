@@ -15,7 +15,7 @@ import de.wieland.Chess.engine.board.Move.MajorAttackMove;
 import de.wieland.Chess.engine.board.Move.MajorMove;
 
 /**
- * public class Queen
+ * Public class Queen.
  * 
  * @author Moritz Wieland
  * @version 1.0

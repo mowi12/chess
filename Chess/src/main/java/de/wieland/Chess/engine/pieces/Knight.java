@@ -15,7 +15,7 @@ import de.wieland.Chess.engine.board.Move.MajorMove;
 import de.wieland.Chess.engine.board.Tile;
 
 /**
- * public class Knight
+ * Public class Knight.
  * 
  * @author Moritz Wieland
  * @version 1.0

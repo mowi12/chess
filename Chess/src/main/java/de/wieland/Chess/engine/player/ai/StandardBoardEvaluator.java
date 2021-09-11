@@ -8,7 +8,7 @@ import de.wieland.Chess.engine.pieces.Piece;
 import de.wieland.Chess.engine.player.Player;
 
 /**
- * public final class StandardBoardEvaluator
+ * Public final class StandardBoardEvaluator.
  * 
  * @author Moritz Wieland
  * @version 1.0
@@ -104,19 +104,6 @@ public final class StandardBoardEvaluator implements BoardEvaluator {
 	private static int castled(final Player player) {
 		return player.isCastled() ? CASTLE_BONUS : 0;
 	}
-	
-//	private static int pawnStructure(final Player player) {
-//        return PawnStructureAnalyzer.get().pawnStructureScore(player);
-//	}
-	
-//	private static int kingSafety(final Player player) {
-//        final KingDistance kingDistance = KingSafetyAnalyzer.get().calculateKingTropism(player);
-//        return ((kingDistance.getEnemyPiece().getPieceValue() / 100) * kingDistance.getDistance());
-//	}
-	
-//	private static int rookStructure(final Player player) {
-//        return RookStructureAnalyzer.get().rookStructureScore(player);
-//    }
 	
 	public String evaluationDetails(final Board board,
 									final int depth) {

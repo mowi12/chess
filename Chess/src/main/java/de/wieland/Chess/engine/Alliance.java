@@ -6,7 +6,7 @@ import de.wieland.Chess.engine.player.Player;
 import de.wieland.Chess.engine.player.WhitePlayer;
 
 /**
- * public enum Alliance
+ * Public enum Alliance.
  * 
  * @author Moritz Wieland
  * @version 1.0

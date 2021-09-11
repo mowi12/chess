@@ -1,7 +1,7 @@
 package de.wieland.Chess.engine.board;
 
 /**
- * public enum MoveStatus
+ * Public enum MoveStatus.
  * 
  * @author Moritz Wieland
  * @version 1.0

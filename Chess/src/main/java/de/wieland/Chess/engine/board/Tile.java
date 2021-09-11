@@ -8,7 +8,7 @@ import com.google.common.collect.ImmutableMap;
 import de.wieland.Chess.engine.pieces.Piece;
 
 /**
- * public abstract class Tile
+ * Public abstract class Tile.
  * 
  * @author Moritz Wieland
  * @version 1.0
@@ -36,12 +36,25 @@ public abstract class Tile {
 		return piece != null ? new OccupiedTile(tileCoordinate, piece) : EMPTY_TILES_CACHE.get(tileCoordinate);
 	}
 	
+	/**
+	 * Abstract methods.
+	 */
 	public abstract boolean isTileOccupied();
 	public abstract Piece getPiece();
 	
+	/**
+	 * Getter method.
+	 */
 	public int getTileCoordinate() { return tileCoordinate; }
 	
 	
+	/**
+	 * Public static final class EmptyTile.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static final class EmptyTile extends Tile {
 		
 		private EmptyTile(final int tileCoordinate) {
@@ -65,6 +78,13 @@ public abstract class Tile {
 	}
 	
 	
+	/**
+	 * Public static final class OccupiedTile.
+	 * 
+	 * @author Moritz Wieland
+	 * @version 1.0
+	 * @date 10.09.2021
+	 */
 	public static final class OccupiedTile extends Tile {
 		private final Piece pieceOnTile;
 

@@ -16,7 +16,7 @@ import de.wieland.Chess.engine.pieces.King;
 import de.wieland.Chess.engine.pieces.Piece;
 
 /**
- * public abstract class Player
+ * Public abstract class Player.
  * 
  * @author Moritz Wieland
  * @version 1.0
@@ -92,6 +92,17 @@ public abstract class Player {
 		return false;
 	}
 	
+	/**
+	 * Abstract methods.
+	 */
+	public abstract Collection<Move> calculateKingCastles(final Collection<Move> playerLegals, final Collection<Move> opponentLegals);
+	public abstract Collection<Piece> getActivePieces();
+	public abstract Alliance getAlliance();
+	public abstract Player getOpponent();
+	
+	/**
+	 * Getter and Setter methods.
+	 */
 	public boolean isMoveLegal(final Move move) { return legalMoves.contains(move); }
 	public boolean isInCheck() { return isInCheck; }
 	public boolean isInCheckMate() { return isInCheck && !hasEscapeMoves(); }
@@ -99,12 +110,6 @@ public abstract class Player {
 	public boolean isKingSideCastleCapable() { return this.playerKing.isKingSideCastleCapable(); }
     public boolean isQueenSideCastleCapable() { return this.playerKing.isQueenSideCastleCapable(); }
 	public boolean isCastled() { return playerKing.isCastled(); }
-	
 	public King getPlayerKing() { return playerKing; }
 	public Collection<Move> getLegalMoves() { return legalMoves; }
-	
-	public abstract Collection<Move> calculateKingCastles(final Collection<Move> playerLegals, final Collection<Move> opponentLegals);
-	public abstract Collection<Piece> getActivePieces();
-	public abstract Alliance getAlliance();
-	public abstract Player getOpponent();
 }

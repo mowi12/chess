@@ -7,7 +7,7 @@ import de.wieland.Chess.engine.board.Board;
 import de.wieland.Chess.engine.board.Move;
 
 /**
- * public abstract class Piece
+ * Public abstract class Piece.
  * 
  * @author Moritz Wieland
  * @version 1.0
@@ -60,132 +60,19 @@ public abstract class Piece {
 		return result;
 	}
 
+	/**
+	 * Abstract methods.
+	 */
 	public abstract int locationBonus();
 	public abstract Collection<Move> calculateLegalMoves(final Board board);
 	public abstract Piece movePiece(Move move);
-
+	
+	/**
+	 * Getter and Setter methods.
+	 */
 	public boolean isFirstMove() { return isFirstMove; }
 	public PieceType getPieceType() { return pieceType; }
 	public int getPiecePosition() { return piecePosition; }
 	public Alliance getPieceAlliance() { return pieceAlliance; }
 	public int getPieceValue() { return pieceType.getPieceValue(); }
-	
-	
-	public enum PieceType {
-		PAWN("P", 100) {
-			@Override
-			public boolean isKing() {
-				return false;
-			}
-
-			@Override
-			public boolean isRook() {
-				return false;
-			}
-
-			@Override
-			public boolean isBishop() {
-				return false;
-			}
-		},
-		KNIGHT("N", 300) {
-			@Override
-			public boolean isKing() {
-				return false;
-			}
-			
-			@Override
-			public boolean isRook() {
-				return false;
-			}
-			
-			@Override
-			public boolean isBishop() {
-				return false;
-			}
-		},
-		BISHOP("B", 300) {
-			@Override
-			public boolean isKing() {
-				return false;
-			}
-			
-			@Override
-			public boolean isRook() {
-				return false;
-			}
-			
-			@Override
-			public boolean isBishop() {
-				return true;
-			}
-		},
-		ROOK("R", 500) {
-			@Override
-			public boolean isKing() {
-				return false;
-			}
-			
-			@Override
-			public boolean isRook() {
-				return true;
-			}
-			
-			@Override
-			public boolean isBishop() {
-				return false;
-			}
-		},
-		QUEEN("Q", 900) {
-			@Override
-			public boolean isKing() {
-				return false;
-			}
-			
-			@Override
-			public boolean isRook() {
-				return false;
-			}
-			
-			@Override
-			public boolean isBishop() {
-				return false;
-			}
-		},
-		KING("K", 10000) {
-			@Override
-			public boolean isKing() {
-				return true;
-			}
-			
-			@Override
-			public boolean isRook() {
-				return false;
-			}
-			
-			@Override
-			public boolean isBishop() {
-				return false;
-			}
-		};
-		
-		private final String pieceName;
-		private final int pieceValue;
-		
-		PieceType(final String pieceName, final int pieceValue) {
-			this.pieceName = pieceName;
-			this.pieceValue = pieceValue;
-		}
-		
-		@Override
-		public String toString() {
-			return pieceName;
-		}
-		
-		public abstract boolean isKing();
-		public abstract boolean isRook();
-		public abstract boolean isBishop();
-		
-		public int getPieceValue() { return this.pieceValue; }
-	}
 }

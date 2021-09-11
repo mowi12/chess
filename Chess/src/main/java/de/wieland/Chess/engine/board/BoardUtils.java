@@ -7,9 +7,10 @@ import com.google.common.collect.ImmutableMap;
 
 import de.wieland.Chess.engine.pieces.King;
 import de.wieland.Chess.engine.pieces.Piece;
+import de.wieland.Chess.engine.pieces.PieceType;
 
 /**
- * public class BoardUtils
+ * Public class BoardUtils.
  * 
  * @author Moritz Wieland
  * @version 1.0
@@ -104,7 +105,7 @@ public class BoardUtils {
                                          final int frontTile) {
         final Piece piece = board.getPiece(frontTile);
         return piece != null &&
-               piece.getPieceType() == Piece.PieceType.PAWN &&
+               piece.getPieceType() == PieceType.PAWN &&
                piece.getPieceAlliance() != king.getPieceAlliance();
     }
 	
@@ -113,6 +114,9 @@ public class BoardUtils {
 			   board.getCurrentPlayer().isInStaleMate();
 	}
 	
+	/**
+	 * Getter and Setter methods.
+	 */
 	public static int getCoordinateAtPosition(final String position) { return POSITION_TO_COORDINATE.get(position); }
 	public static String getPositionAtCoordinate(final int coordinate) { return ALGEBRAIC_NOTATION[coordinate]; }
 }
