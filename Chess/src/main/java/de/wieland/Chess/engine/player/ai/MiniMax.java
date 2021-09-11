@@ -1,5 +1,6 @@
 package de.wieland.Chess.engine.player.ai;
 
+import java.util.Observable;
 import java.util.concurrent.atomic.AtomicLong;
 
 import de.wieland.Chess.engine.board.Board;
@@ -15,7 +16,8 @@ import de.wieland.Chess.engine.board.MoveTransition;
  * @version 1.0
  * @date 10.09.2021
  */
-public class MiniMax implements MoveStrategy {
+@SuppressWarnings("deprecation")
+public class MiniMax extends Observable implements MoveStrategy {
 	private final BoardEvaluator boardEvaluator;
 	private final int searchDepth;
 	
@@ -51,6 +53,7 @@ public class MiniMax implements MoveStrategy {
 
 		for (final Move move : board.getCurrentPlayer().getLegalMoves()) {
 			final MoveTransition moveTransition = board.getCurrentPlayer().makeMove(move);
+			final String output;
 			
 			if(moveTransition.getMoveStatus().isDone()) {
 				final FreqTableRow row = new FreqTableRow(move);
@@ -60,8 +63,10 @@ public class MiniMax implements MoveStrategy {
 							   min(moveTransition.getToBoard(), searchDepth - 1) :
 							   max(moveTransition.getToBoard(), searchDepth - 1);
 				
-				System.out.println("\t" + toString() + " analyzing move (" + moveCounter + "/" + numMoves + ") " + move +
-                                   " scores " + currentValue + " " + this.freqTable[this.freqTableIndex]);
+				output = "\t" + toString() + " analyzing move (" + moveCounter + "/" + numMoves + ") " + move +
+                        " scores " + currentValue + " " + this.freqTable[this.freqTableIndex];
+				System.out.println(output);
+				
 				freqTableIndex++;
 				
 				if(board.getCurrentPlayer().getAlliance().isWhite() &&
@@ -74,16 +79,25 @@ public class MiniMax implements MoveStrategy {
 					bestMove = move;
 				}
 			} else {
-				System.out.println("\t" + toString() + " can't execute move (" + moveCounter + "/" + numMoves+ ") " + move);
+				output = "\t" + toString() + " can't execute move (" + moveCounter + "/" + numMoves+ ") " + move;
+				System.out.println(output);
 			}
 				
 			moveCounter++;
+			setChanged();
+			notifyObservers(output);
 		}
 			
 		executionTime = System.currentTimeMillis() - startTime;
+		final String result = board.getCurrentPlayer() + " SELECTS " + bestMove +
+							  " [#boards = " + this.boardsEvaluated +
+							  ", time taken = " + this.executionTime + "ms" +
+							  ", rate = " + (1000 * ((double) this.boardsEvaluated/this.executionTime)) + "]";
 		
-		System.out.printf("%s SELECTS %s [#boards = %d time taken = %d ms, rate = %.1f\n", board.getCurrentPlayer(),
+		System.out.printf("%s SELECTS %s [#boards = %d, time taken = %d ms, rate = %.1f]\n", board.getCurrentPlayer(),
                 bestMove, this.boardsEvaluated, this.executionTime, (1000 * ((double)this.boardsEvaluated/this.executionTime)));
+		this.setChanged();
+		this.notifyObservers(result);
 		
 		long total = 0;
 		

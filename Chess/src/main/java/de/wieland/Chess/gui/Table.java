@@ -18,7 +18,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
-import java.util.concurrent.ExecutionException;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -95,7 +94,7 @@ public class Table extends Observable {
 	private BoardDirection boardDirection;
 	
 	private static final int OUTER_FRAME_DIMENSION_X = 700;
-	private static final int OUTER_FRAME_DIMENSION_Y = 700;
+	private static final int OUTER_FRAME_DIMENSION_Y = 600;
 	private static final Dimension BOARD_PANEL_DIMENSION = new Dimension(500, 500);
 	private static final Dimension TILE_PANEL_DIMENSION = new Dimension(62, 62);
 	
@@ -433,6 +432,7 @@ public class Table extends Observable {
 		@Override
 		protected Move doInBackground() throws Exception {
 			final MoveStrategy miniMax = new MiniMax(Table.get().getGameSetup().getSearchDepth());
+			((Observable) miniMax).addObserver(Table.get().getDebugPanel());
 			
 			final Move bestMove = miniMax.execute(Table.get().getGameBoard());
 			
@@ -452,9 +452,7 @@ public class Table extends Observable {
 				Table.get().getBoardPanel().drawBoard(Table.get().getGameBoard());
 				Table.get().getDebugPanel().redo();
 				Table.get().moveMadeUpdate(PlayerType.COMPUTER);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			} catch (ExecutionException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}

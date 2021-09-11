@@ -17,7 +17,7 @@ import javax.swing.JTextArea;
  */
 @SuppressWarnings({ "serial", "deprecation" })
 public class DebugPanel extends JPanel implements Observer {
-	private static final Dimension CHAT_PANEL_DIMENSION = new Dimension(700, 150);
+	private static final Dimension CHAT_PANEL_DIMENSION = new Dimension(700, 50);
 	private final JTextArea textArea;
 	
 	public DebugPanel() {
@@ -33,7 +33,7 @@ public class DebugPanel extends JPanel implements Observer {
 	@Override
 	public void update(final Observable o,
 					   final Object arg) {
-		textArea.setText(o.toString().trim());
+		textArea.setText(arg.toString().trim());
 		redo();
 	}
 	
