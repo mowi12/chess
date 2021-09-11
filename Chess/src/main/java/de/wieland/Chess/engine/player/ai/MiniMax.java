@@ -91,11 +91,10 @@ public class MiniMax extends Observable implements MoveStrategy {
 		executionTime = System.currentTimeMillis() - startTime;
 		final String result = board.getCurrentPlayer() + " SELECTS " + bestMove +
 							  " [#boards = " + this.boardsEvaluated +
-							  ", time taken = " + this.executionTime + "ms" +
-							  ", rate = " + (1000 * ((double) this.boardsEvaluated/this.executionTime)) + "]";
+							  ", time taken = " + this.executionTime + "ms" + "]";
 		
-		System.out.printf("%s SELECTS %s [#boards = %d, time taken = %d ms, rate = %.1f]\n", board.getCurrentPlayer(),
-                bestMove, this.boardsEvaluated, this.executionTime, (1000 * ((double)this.boardsEvaluated/this.executionTime)));
+		System.out.printf("%s SELECTS %s [#boards = %d, time taken = %d ms]\n", board.getCurrentPlayer(),
+                bestMove, this.boardsEvaluated, this.executionTime);
 		this.setChanged();
 		this.notifyObservers(result);
 		
