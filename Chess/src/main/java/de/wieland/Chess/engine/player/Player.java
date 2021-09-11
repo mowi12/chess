@@ -47,7 +47,7 @@ public abstract class Player {
 		throw new RuntimeException("Should not reach here! Not a valid board!");
 	}
 	
-	protected static Collection<Move> calculateAttacksOnTile(final int piecePosition, Collection<Move> opponentMoves) {
+	protected static Collection<Move> calculateAttacksOnTile(final int piecePosition, final Collection<Move> opponentMoves) {
 		final List<Move> attackMoves = new ArrayList<>();
 		
 		for (final Move move : opponentMoves) {
