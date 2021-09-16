@@ -15,3 +15,5 @@ public class Chess {
 		Table.get().show();
 	}
 }
+
+//Test
